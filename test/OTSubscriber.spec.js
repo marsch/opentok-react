@@ -1,5 +1,5 @@
-import React from 'react';
 import { mount } from 'enzyme';
+import React from 'react';
 import OTSubscriber from '../src/OTSubscriber';
 
 describe('OTSubscriber', () => {
@@ -43,7 +43,9 @@ describe('OTSubscriber', () => {
     });
 
     it('should render style attribute on wrapper element', () => {
-      expect(wrapper.containsMatchingElement(<div style={style} />)).toEqual(true);
+      expect(wrapper.containsMatchingElement(<div style={style} />)).toEqual(
+        true,
+      );
     });
   });
 

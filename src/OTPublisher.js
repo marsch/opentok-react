@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import once from 'lodash/once';
 import { omitBy, isNil } from 'lodash/fp';
 import uuid from 'uuid';
+import OT from '@opentok/client';
 
 export default class OTPublisher extends Component {
   constructor(props, context) {
@@ -163,15 +164,23 @@ export default class OTPublisher extends Component {
 
   sessionConnectedHandler = () => {
     this.publishToSession(this.state.publisher);
-  }
+  };
 
   streamCreatedHandler = (event) => {
     this.setState({ lastStreamId: event.stream.id });
-  }
+  };
 
   render() {
     const { className, style } = this.props;
-    return <div className={className} style={style} ref={(node) => { this.node = node; }} />;
+    return (
+      <div
+        className={className}
+        style={style}
+        ref={(node) => {
+          this.node = node;
+        }}
+      />
+    );
   }
 }
 

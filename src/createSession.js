@@ -1,3 +1,5 @@
+import OT from '@opentok/client';
+
 export default function createSession({
   apiKey,
   sessionId,

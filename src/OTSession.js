@@ -41,7 +41,9 @@ export default class OTSession extends Component {
       apiKey: this.props.apiKey,
       sessionId: this.props.sessionId,
       token: this.props.token,
-      onStreamsUpdated: (streams) => { this.setState({ streams }); },
+      onStreamsUpdated: (streams) => {
+        this.setState({ streams });
+      },
       onConnect: this.props.onConnect,
       onError: this.props.onError,
       options: this.props.options,

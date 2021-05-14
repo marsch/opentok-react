@@ -15,6 +15,11 @@
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
 
+"@opentok/client@^2.19.3":
+  version "2.19.3"
+  resolved "https://registry.yarnpkg.com/@opentok/client/-/client-2.19.3.tgz#ac9a4bac26e52b9c8453cd17d2b9444855b0b65e"
+  integrity sha512-4wkuo2SrbkaI9079UBYYtTtTaFihdezFOgVf3cvWTiY9i987H4r1vkQ7ezHr4YizUINSUadoe6Y3sDGcyR4aUQ==
+
 "@types/events@*":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@types/events/-/events-3.0.0.tgz#2862f3f58a9a7f7c3e78d79f130dd4d71c25c2a7"
@@ -4949,10 +4954,6 @@ safe-regex@^1.1.0:
   integrity sha1-QKNmnzsHfR6UPURinhV91IAjvy4=
   dependencies:
     ret "~0.1.10"
-
-scriptjs@^2.5.8:
-  version "2.5.8"
-  resolved "https://registry.yarnpkg.com/scriptjs/-/scriptjs-2.5.8.tgz#d0c43955c2e6bad33b6e4edf7b53b8965aa7ca5f"
 
 semver-diff@^2.0.0:
   version "2.1.0"

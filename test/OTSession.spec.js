@@ -1,5 +1,6 @@
-import React from 'react';
+import OT from '@opentok/client';
 import { mount } from 'enzyme';
+import React from 'react';
 import OTSession from '../src/OTSession';
 
 const MyComponent = () => <div />;
@@ -49,9 +50,9 @@ describe('OTSession', () => {
   describe('without event handlers', () => {
     describe('without children', () => {
       beforeEach(() => {
-        wrapper = mount((
-          <OTSession apiKey={apiKey} sessionId={sessionId} token={token} />
-        ));
+        wrapper = mount(
+          <OTSession apiKey={apiKey} sessionId={sessionId} token={token} />,
+        );
       });
 
       it('should have a streams state', () => {
@@ -110,12 +111,12 @@ describe('OTSession', () => {
 
     describe('with children', () => {
       beforeEach(() => {
-        wrapper = mount((
+        wrapper = mount(
           <OTSession apiKey={apiKey} sessionId={sessionId} token={token}>
             <MyComponent />
             <MyComponent />
-          </OTSession>
-        ));
+          </OTSession>,
+        );
       });
 
       it('should have two children', () => {
@@ -124,7 +125,5 @@ describe('OTSession', () => {
     });
   });
 
-  describe('with event handlers', () => {
-
-  });
+  describe('with event handlers', () => {});
 });

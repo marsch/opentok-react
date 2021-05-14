@@ -1,12 +1,10 @@
 module.exports = {
-  extends: '../src/.eslintrc.js',
-  plugins: [
-    'jasmine'
-  ],
+  extends: "../src/.eslintrc.js",
+  plugins: ["jasmine"],
   env: {
-    jasmine: true
+    jasmine: true,
   },
   rules: {
-    'no-console': 'off'
-  }
+    "no-console": "off",
+  },
 };

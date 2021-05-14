@@ -1,3 +1,4 @@
+import OT from '@opentok/client';
 import createSession from '../src/createSession';
 
 describe('createSession', () => {
@@ -72,14 +73,19 @@ describe('createSession', () => {
     });
 
     it('should call session.on', () => {
-      expect(session.on).toHaveBeenCalledWith(jasmine.objectContaining({
-        streamCreated: jasmine.any(Function),
-        streamDestroyed: jasmine.any(Function),
-      }));
+      expect(session.on).toHaveBeenCalledWith(
+        jasmine.objectContaining({
+          streamCreated: jasmine.any(Function),
+          streamDestroyed: jasmine.any(Function),
+        }),
+      );
     });
 
     it('should call session.connect', () => {
-      expect(session.connect).toHaveBeenCalledWith(options.token, jasmine.any(Function));
+      expect(session.connect).toHaveBeenCalledWith(
+        options.token,
+        jasmine.any(Function),
+      );
     });
 
     it('should return session helper', () => {
@@ -145,10 +151,12 @@ describe('createSession', () => {
     it('should call session.off on disconnect', () => {
       expect(session.off).not.toHaveBeenCalled();
       sessionHelper.disconnect();
-      expect(session.off).toHaveBeenCalledWith(jasmine.objectContaining({
-        streamCreated: onStreamCreated,
-        streamDestroyed: onStreamDestroyed,
-      }));
+      expect(session.off).toHaveBeenCalledWith(
+        jasmine.objectContaining({
+          streamCreated: onStreamCreated,
+          streamDestroyed: onStreamDestroyed,
+        }),
+      );
     });
 
     it('should call session.disconnect on disconnect', () => {

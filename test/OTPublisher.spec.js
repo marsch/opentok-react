@@ -1,5 +1,6 @@
-import React from 'react';
+import OT from '@opentok/client';
 import { mount } from 'enzyme';
+import React from 'react';
 import OTPublisher from '../src/OTPublisher';
 
 describe('OTPublisher', () => {
@@ -60,7 +61,9 @@ describe('OTPublisher', () => {
     });
 
     it('should render style attribute on wrapper element', () => {
-      expect(wrapper.containsMatchingElement(<div style={style} />)).toEqual(true);
+      expect(wrapper.containsMatchingElement(<div style={style} />)).toEqual(
+        true,
+      );
     });
   });
 
@@ -83,7 +86,10 @@ describe('OTPublisher', () => {
 
       it('should not render the publisher container element when default UI is disabled', () => {
         const wrapper = mount(
-          <OTPublisher session={session} properties={{ insertDefaultUI: false }} />,
+          <OTPublisher
+            session={session}
+            properties={{ insertDefaultUI: false }}
+          />,
         );
         const divContainer = wrapper.render().find('div.OTPublisherContainer');
         expect(divContainer.length).toBe(0);
